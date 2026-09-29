@@ -67,7 +67,7 @@ Analyse der vorhandenen Fotos vom Gastraum:
 | **Offene Lüftungsrohre aus Stahl** | Industrie, Loft | feine silbergraue Linien und Trenner, Icons im Strich-Stil |
 | **Diagonale LED-Lichtlinien** an der Decke | modern, Bewegung | Signatur-Element: schräge Lichtlinie, die Abschnitte trennt und beim Scrollen leicht aufleuchtet |
 | **Nussholz-Thekenplatte** mit indirektem Licht darunter | Genuss, Qualität | horizontales Holzband als „Theke“ unter dem Hero, Tabellenkopf der Karte |
-| **Barhocker mit Petrol-Samtbezug** | weich, Farbtupfer | zweiter Akzent `--raum-samt` für Tags (vegan, alkoholfrei), Fokus-Ring |
+| **Barhocker mit Petrol-Samtbezug** | weich, Farbtupfer | nach Rückmeldung nicht übernommen: die Seite bleibt ohne Blau, warm in Holz, Klinker und Orange |
 | **Gläserregal über der Theke** | Bar-Handwerk | Fotomotiv für Hero, Glanzlichter |
 | **Logo:** Turm-Signet über „GENUSS WERK“, Kupferrahmen | Marke, Bad Rothenfelde | Logo im Kupferrahmen, Signet als Favicon |
 | **Marke:** Orange-Etiketten mit Pinselschrift („Speisen“, „Getränke“, „Musikgenuss!“), Navy-Textflächen | laut, freundlich, per Du | Pinselschrift nur für kurze emotionale Wörter, Orange für Handlungen, Navy für Info-Flächen |

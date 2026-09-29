@@ -3,7 +3,7 @@
  *
  * Leitidee "Abend an der Theke": Die Seite ist gebaut wie der Gastraum.
  * Schwarze Decke mit Lichtlinien oben, eine Nussholz-Theke als tragendes Band,
- * Klinker für die Geschichte, Petrol-Samt für die Reservierung, Stahl für Fakten.
+ * Klinker für Geschichte und Musik, ein Nussholz-Tisch für die Reservierung, Stahl für Fakten.
  *
  * Bewegung: ein Moment beim Laden (Licht geht an, Gläser funkeln), danach nur
  * kleine Antworten auf Scrollen und Klicks. Alles aus bei prefers-reduced-motion.
@@ -53,6 +53,7 @@ h3 { font-size: var(--fs-h3); font-weight: 800; text-transform: uppercase; lette
   color: var(--orange);
 }
 h2.hand { margin-bottom: 0.5em; }
+.unterzeile { font-size: clamp(1.75rem, 3vw, 2.25rem); margin: -0.35em 0 0.7em; }
 
 .lead { font-size: var(--fs-lead); line-height: 1.5; font-weight: 300; color: #fff; }
 .leise { color: var(--text-leise); font-size: var(--fs-klein); }
@@ -62,7 +63,7 @@ h2.hand { margin-bottom: 0.5em; }
 
 .vorschau {
   margin: 0; padding: 5px var(--rand);
-  background: var(--navy-tief); color: var(--led);
+  background: var(--decke-rand); color: var(--led);
   font-size: var(--fs-klein); text-align: center;
 }
 
@@ -233,14 +234,20 @@ h2.hand { margin-bottom: 0.5em; }
 }
 .theke-innen:empty { padding: 14px 0; }
 
+.theke-info { display: flex; flex-direction: column; gap: 4px; }
+.theke-adresse { margin: 0 0 0 20px; color: var(--text-leise); font-size: 1rem; }
+.theke-adresse a { color: var(--led); text-decoration: none; white-space: nowrap; }
+.theke-adresse a:hover { text-decoration: underline; }
+.theke-adresse span { margin: 0 6px; opacity: 0.5; }
+
 /* Öffnungsstatus */
 .status { display: inline-flex; align-items: center; gap: 10px; margin: 0; font-family: var(--font-titel); font-weight: 500; font-size: 1.25rem; }
 .status::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--stahl); flex: none; }
-.status[data-status="offen"]::before { background: var(--samt-hell); animation: puls 2.6s ease-out infinite; }
+.status[data-status="offen"]::before { background: var(--led); box-shadow: var(--glow); animation: puls 2.6s ease-out infinite; }
 .status:empty { display: none; }
 @keyframes puls {
-  0% { box-shadow: 0 0 0 0 rgba(127, 188, 205, 0.6); }
-  70%, 100% { box-shadow: 0 0 0 12px rgba(127, 188, 205, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(230, 233, 231, 0.55); }
+  70%, 100% { box-shadow: 0 0 0 12px rgba(230, 233, 231, 0); }
 }
 
 /* ---------- Abschnitte ---------- */
@@ -306,13 +313,15 @@ h2.hand { margin-bottom: 0.5em; }
 .preis-label { color: var(--text-leise); font-weight: 400; font-size: 0.95rem; }
 .gericht-text { margin: 4px 0 0; color: var(--text-leise); font-weight: 300; font-size: 1rem; line-height: 1.45; }
 
-/* Musik & Events (Orange heller, damit es auf Navy lesbar bleibt) */
-.events .hand, .termine time { color: #f58a5a; }
-.events { background: var(--navy); position: relative; overflow: hidden; }
-.events::before {
-  content: ""; position: absolute; inset: 0;
-  background: url("texturen/rauschen.png"), radial-gradient(90% 120% at 100% 50%, rgba(255, 255, 255, 0.07), transparent 60%);
-  pointer-events: none;
+/* Musik & Events: Klinkerwand bei Nacht, warmes Licht von rechts */
+.events {
+  position: relative; overflow: hidden;
+  background:
+    radial-gradient(60% 90% at 85% 50%, rgba(208, 77, 21, 0.16), transparent 70%),
+    linear-gradient(rgba(29, 20, 17, 0.9), rgba(29, 20, 17, 0.9)),
+    url("texturen/klinker.jpg") 0 0 / 200px 60px;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
 }
 .events-innen {
   position: relative; max-width: calc(var(--max) + 2 * var(--rand)); margin: 0 auto; padding: var(--abstand) var(--rand);
@@ -320,15 +329,15 @@ h2.hand { margin-bottom: 0.5em; }
 }
 .events-text p { max-width: 60ch; }
 .genres { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 28px 0 32px; }
-.genres li { padding: 6px 16px; border: 1px solid rgba(230, 233, 231, 0.35); font-family: var(--font-titel); font-weight: 500; font-size: 1.0625rem; }
+.genres li { padding: 6px 16px; border: 1px solid rgba(230, 233, 231, 0.3); background: rgba(0, 0, 0, 0.25); font-family: var(--font-titel); font-weight: 500; font-size: 1.0625rem; }
 .termine-leer { color: var(--stahl-hell); }
 .termine { list-style: none; padding: 0; margin: 0 0 24px; }
 .termine li { display: grid; grid-template-columns: 7em 1fr; gap: 4px 16px; padding: 12px 0; border-bottom: 1px solid rgba(230, 233, 231, 0.18); }
 .termine time { font-family: var(--font-hand); color: var(--orange); font-size: 1.4rem; line-height: 1.1; }
 .termine span { grid-column: 2; color: var(--stahl-hell); font-size: 1rem; }
 
-.platte { position: relative; width: min(100%, 420px); aspect-ratio: 1; margin-left: auto; }
-.platte svg { width: 100%; height: 100%; border-radius: 50%; box-shadow: 0 40px 80px -30px rgba(0, 0, 0, 0.7); }
+.platte { position: relative; width: min(100%, 420px); aspect-ratio: 1; margin-left: auto; border-radius: 50%; box-shadow: 0 30px 60px -18px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(0, 0, 0, 0.4); }
+.platte svg { display: block; width: 100%; height: 100%; }
 .platte::after {
   /* Lichtreflex bleibt stehen, während die Platte läuft */
   content: ""; position: absolute; inset: 0; border-radius: 50%;
@@ -344,40 +353,21 @@ h2.hand { margin-bottom: 0.5em; }
   .platte { width: min(70%, 300px); margin: 0 auto; order: -1; }
 }
 
-/* Reservieren: Samt-Polster wie die Barhocker */
-.polster {
-  position: relative; overflow: hidden;
-  padding: clamp(36px, 6vw, 80px);
-  border-radius: 28px;
+/* Reservieren: Tischplatte aus Nussholz */
+.tisch {
+  max-width: 880px; margin: 0 auto; text-align: center;
+  padding: clamp(40px, 6vw, 72px) clamp(24px, 6vw, 72px);
+  border-radius: 6px;
   background:
-    url("texturen/rauschen.png"),
-    radial-gradient(70% 90% at 25% 15%, rgba(160, 215, 230, 0.30), transparent 60%),
-    radial-gradient(60% 80% at 90% 110%, rgba(0, 0, 0, 0.35), transparent 60%),
-    linear-gradient(135deg, var(--samt) 0%, var(--samt-tief) 100%);
-  box-shadow: inset 0 2px 0 rgba(255, 255, 255, 0.12), inset 0 -18px 40px rgba(0, 0, 0, 0.25), 0 30px 60px -30px rgba(0, 0, 0, 0.8);
+    linear-gradient(180deg, rgba(32, 19, 11, 0.6), rgba(32, 19, 11, 0.82)),
+    repeating-linear-gradient(180deg, transparent 0 159px, rgba(0, 0, 0, 0.18) 159px 160px),
+    url("texturen/nuss.jpg") 0 0 / 1200px 160px;
+  box-shadow: inset 0 1px 0 rgba(255, 220, 180, 0.28), 0 30px 60px -30px rgba(0, 0, 0, 0.85);
 }
-.polster::after {
-  /* Keder: umlaufende Naht */
-  content: ""; position: absolute; inset: 12px; border-radius: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.22); box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
-  pointer-events: none;
-}
-.polster { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); column-gap: clamp(32px, 6vw, 96px); }
-.polster > :not(.polster-zeiten) { grid-column: 1; }
-.polster-zeiten { grid-column: 2; grid-row: 1 / span 4; align-self: center; position: relative; z-index: 1; padding: 24px 0 24px clamp(24px, 4vw, 48px); border-left: 1px solid rgba(255, 255, 255, 0.22); }
-.polster-zeiten .status { margin-bottom: 16px; }
-.zeiten-kurz { list-style: none; padding: 0; margin: 0; }
-.zeiten-kurz li { display: flex; justify-content: space-between; gap: 16px; padding: 6px 0; font-size: 1.0625rem; }
-.zeiten-kurz li span:first-child { color: rgba(255, 255, 255, 0.8); }
-.zeiten-kurz li span:last-child { font-variant-numeric: tabular-nums; text-align: right; }
-@media (max-width: 860px) {
-  .polster { grid-template-columns: 1fr; }
-  .polster-zeiten { grid-column: 1; grid-row: auto; margin-top: 32px; padding: 24px 0 0; border-left: 0; border-top: 1px solid rgba(255, 255, 255, 0.22); }
-}
-.polster h2 { color: #fff; }
-.polster .lead { max-width: 44ch; }
-.polster .knoepfe { margin-top: 32px; position: relative; z-index: 1; }
-.polster-hinweis { margin: 28px 0 0; color: rgba(255, 255, 255, 0.78); font-size: 1rem; }
+.tisch h2 { color: #fff; }
+.tisch .lead { max-width: 44ch; margin-left: auto; margin-right: auto; }
+.tisch .knoepfe { margin-top: 28px; justify-content: center; }
+.tisch-hinweis { margin: 24px auto 0; color: rgba(255, 255, 255, 0.8); font-size: 1rem; }
 
 /* Impressionen */
 .galerie { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 24px); }
@@ -438,7 +428,7 @@ h2.hand { margin-bottom: 0.5em; }
   transition: background-color 0.25s, border-color 0.25s, color 0.25s;
 }
 .filter button:hover { border-color: var(--led); }
-.filter button[aria-pressed="true"] { background: var(--samt); border-color: var(--samt-hell); color: #fff; }
+.filter button[aria-pressed="true"] { background: var(--orange-tief); border-color: var(--orange-tief); color: #fff; }
 .sprung { display: flex; gap: 22px; overflow-x: auto; padding: 12px 0 12px; white-space: nowrap; scrollbar-width: none; font-family: var(--font-titel); font-weight: 500; }
 .sprung::-webkit-scrollbar { display: none; }
 .sprung a { position: relative; text-decoration: none; color: var(--text-leise); padding-bottom: 4px; }
@@ -456,7 +446,7 @@ h2.hand { margin-bottom: 0.5em; }
 .gericht { padding: 14px 0; max-width: none; animation: einblenden 0.35s var(--leicht); }
 .gericht-kopf h4 { font-family: var(--font-titel); font-weight: 700; font-size: 1.25rem; line-height: 1.15; }
 .gericht-tags { margin: 6px 0 0; display: flex; gap: 12px; }
-.tag { font-size: 0.875rem; color: var(--samt-hell); display: inline-flex; align-items: center; gap: 6px; }
+.tag { font-size: 0.875rem; color: var(--salbei); display: inline-flex; align-items: center; gap: 6px; }
 .tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
 .tag-hausmarke { color: #e2865a; }
 .tag-regional { color: var(--nuss-hell); }

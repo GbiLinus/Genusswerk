@@ -18,7 +18,7 @@ ROOT = Path(__file__).resolve().parent
 DATEN = json.loads((ROOT / "daten" / "inhalte.json").read_text(encoding="utf-8"))
 TEMPLATE = (ROOT / "src" / "template.html").read_text(encoding="utf-8")
 
-NAV = [("#genuss", "Über uns"), ("karte/", "Karte"), ("#events", "Musik"),
+NAV = [("#genuss", "Über uns"), ("karte/", "Karte"), ("#events", "Musik & Events"),
        ("#eindruecke", "Impressionen"), ("#besuch", "Besuch")]
 
 FILTER = [("vegetarisch", "Vegetarisch"), ("vegan", "Vegan"), ("alkoholfrei", "Alkoholfrei")]
@@ -69,9 +69,15 @@ def bild_da(datei: str) -> bool:
 
 # ---------- Bausteine ----------
 
+def fotos_da() -> bool:
+    return any(bild_da(b["datei"]) for b in DATEN["bilder_site"]["galerie"])
+
+
 def navigation(wurzel: str) -> str:
     links = []
     for href, label in NAV:
+        if href == "#eindruecke" and not fotos_da():
+            continue
         ziel = href if (href.startswith("#") and wurzel == "") else wurzel + href
         links.append(f'<a class="menue-link" href="{e(ziel)}">{e(label)}</a>')
     return "\n      ".join(links)
@@ -131,22 +137,6 @@ def zeiten_tabelle() -> str:
     return '<table class="zeiten">' + "".join(zeilen) + "</table>"
 
 
-def zeiten_kurz() -> str:
-    """Fasst gleiche Zeiten an Folgetagen zusammen: 'Dienstag bis Freitag: 16 bis 22 Uhr'."""
-    def uhr(t):
-        return t.removesuffix(":00")
-    gruppen = []
-    for t in DATEN["oeffnungszeiten"]["tage"]:
-        wert = "Ruhetag" if t.get("geschlossen") else f'{uhr(t["von"])} bis {uhr(t["bis"])} Uhr'
-        if gruppen and gruppen[-1][2] == wert:
-            gruppen[-1][1] = t["tag"]
-        else:
-            gruppen.append([t["tag"], t["tag"], wert])
-    zeilen = "".join(f'<li><span>{e(a) if a == z else e(a) + " bis " + e(z)}</span><span>{e(w)}</span></li>'
-                     for a, z, w in gruppen)
-    return f'<ul class="zeiten-kurz">{zeilen}</ul>'
-
-
 def gericht_html(g: dict, k: dict) -> str:
     beschr = f'<p class="gericht-text">{e(g["beschreibung"])}</p>' if g.get("beschreibung") else ""
     t = tags(g, k)
@@ -194,6 +184,16 @@ def vinyl() -> str:
         <circle r="2.6" fill="#1a1c1f"/>
       </svg>
     </div>"""
+
+
+def galerie_abschnitt() -> str:
+    """Impressionen erscheinen erst, wenn mindestens ein freigegebenes Foto in bilder/ liegt."""
+    if not fotos_da():
+        return ""
+    return f"""<section class="abschnitt eindruecke" id="eindruecke" aria-labelledby="t-eindruecke">
+  <h2 id="t-eindruecke">Impressionen</h2>
+  {galerie()}
+</section>"""
 
 
 def galerie() -> str:
@@ -273,7 +273,10 @@ def startseite() -> str:
     <p class="hero-lead">{e(b["unterzeile"])}</p>
   </div>
   {theke(f'''
-        <p class="status" data-status>Öffnungszeiten weiter unten</p>
+        <div class="theke-info">
+          <p class="status" data-status>Öffnungszeiten weiter unten</p>
+          <p class="theke-adresse">{e(k["strasse"])}, {e(k["ort"])} <span aria-hidden="true">|</span> <a href="tel:{e(k["telefon_link"])}">{e(k["telefon_anzeige"])}</a></p>
+        </div>
         <div class="knoepfe">
           <a class="knopf knopf-orange" href="#reservieren">Tisch reservieren</a>
           <a class="knopf knopf-linie" href="karte/">Karte ansehen</a>
@@ -282,9 +285,10 @@ def startseite() -> str:
 
 <section class="abschnitt genuss" id="genuss" aria-labelledby="t-genuss">
   <div class="genuss-text">
-    <h2 class="hand" id="t-genuss">{e(u["headline"])}</h2>
+    <h2 id="t-genuss">Über uns</h2>
+    <p class="hand unterzeile">{e(u["headline"])}</p>
     <p class="lead">{e(u["absaetze"][0])}</p>
-    {"".join(f"<p>{e(p)}</p>" for p in u["absaetze"][1:])}
+    <p>{e(u["absaetze"][1])}</p>
   </div>
   <aside class="klinker" aria-labelledby="t-geschichte">
     <h3 id="t-geschichte">Vom Café Koch zum Genusswerk</h3>
@@ -309,7 +313,8 @@ def startseite() -> str:
 <section class="events" id="events" aria-labelledby="t-events">
   <div class="events-innen">
     <div class="events-text">
-      <h2 class="hand" id="t-events">{e(m["headline"])}</h2>
+      <h2 id="t-events">Musik &amp; Events</h2>
+      <p class="hand unterzeile">{e(m["headline"])}</p>
       {"".join(f"<p>{e(p)}</p>" for p in m["absaetze"])}
       <ul class="genres">{"".join(f"<li>{e(g)}</li>" for g in m["genres"])}</ul>
       {termine}
@@ -319,25 +324,18 @@ def startseite() -> str:
 </section>
 
 <section class="abschnitt reservieren" id="reservieren" aria-labelledby="t-reservieren">
-  <div class="polster">
+  <div class="tisch">
     <h2 id="t-reservieren">Reservieren &amp; feiern</h2>
     <p class="lead">Zu zweit, mit dem Stammtisch oder mit der ganzen Gesellschaft: Ruf an oder schreib uns, wir halten deinen Tisch frei.</p>
     <div class="knoepfe">
       <a class="knopf knopf-orange" href="tel:{e(k["telefon_link"])}">{e(k["telefon_anzeige"])} anrufen</a>
       <a class="knopf knopf-hell" href="mailto:{e(k["email"])}?subject=Reservierung%20im%20Genusswerk&amp;body={mail_text}">E-Mail schreiben</a>
     </div>
-    <p class="polster-hinweis">Für Feiern und größere Gruppen sprich uns gern frühzeitig an.</p>
-    <div class="polster-zeiten">
-      <p class="status" data-status></p>
-      {zeiten_kurz()}
-    </div>
+    <p class="tisch-hinweis">Für Feiern und größere Gruppen sprich uns gern frühzeitig an.</p>
   </div>
 </section>
 
-<section class="abschnitt eindruecke" id="eindruecke" aria-labelledby="t-eindruecke">
-  <h2 id="t-eindruecke">Impressionen</h2>
-  {galerie()}
-</section>
+{galerie_abschnitt()}
 
 {lichtlinie()}
 
@@ -377,7 +375,7 @@ def kartenseite() -> str:
     sprung = "".join(f'<a href="#{slug(t)}-{slug(k["name"])}">{e(k["name"])}</a>'
                      for s, t in (("speisekarte", "Speisen"), ("getraenkekarte", "Getränke"))
                      for k in DATEN[s]["kategorien"])
-    kopf_leds = [(-4, 44, 58, -8, 0.2), (42, 34, 70, -8, 0.45), (22, 70, 26, 14, 0.7)]
+    kopf_leds = [(64, 62, 40, -5, 0.2), (76, 82, 30, -5, 0.45)]
     return f"""
 <section class="hero hero-klein">
   {decke(kopf_leds, glaeser=False)}
