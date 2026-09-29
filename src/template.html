@@ -6,7 +6,8 @@
 <title>{{titel}}</title>
 <meta name="description" content="{{beschreibung}}">
 {{robots}}
-<meta name="theme-color" content="#1f2124">
+<meta name="theme-color" content="#1a1c1f">
+<meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{titel}}">
 <meta property="og:description" content="{{beschreibung}}">
@@ -21,25 +22,31 @@
   if (neuGeladen && location.hash) history.replaceState(null, "", location.pathname + location.search);
   window.__gwNachOben = neuGeladen || !location.hash;
   if (window.__gwNachOben) window.scrollTo(0, 0);
+  document.documentElement.classList.add("js");
 })();
 </script>
+<link rel="preload" href="{{wurzel}}src/fonts/barlow-semi-condensed-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{wurzel}}src/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{wurzel}}src/fonts.css">
 <link rel="stylesheet" href="{{wurzel}}src/design-tokens.css">
 <link rel="stylesheet" href="{{wurzel}}src/site.css">
 {{jsonld}}
 </head>
 <body data-seite="{{seite}}">
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
-{{vorschau_hinweis}}
-<header class="kopf">
+<header class="kopf" id="kopf">
+  {{vorschau_hinweis}}
   <div class="kopf-innen">
-    <a class="marke" href="{{wurzel}}" aria-label="Genusswerk – Startseite">
-      <span class="marke-wort">GENUSS<br>WERK</span>
+    <a class="marke" href="{{wurzel}}" aria-label="Genusswerk, zur Startseite">
+      <span class="marke-rahmen"><span>GENUSS</span><span>WERK</span></span>
       <span class="marke-claim">Schlemmen &amp; Verweilen</span>
     </a>
-    <button id="menue-knopf" class="menue-knopf" type="button" aria-expanded="false" aria-controls="menue">Menü</button>
+    <button id="menue-knopf" class="menue-knopf" type="button" aria-expanded="false" aria-controls="menue">
+      <span class="menue-striche" aria-hidden="true"></span><span class="menue-wort">Menü</span>
+    </button>
     <nav id="menue" class="menue" aria-label="Hauptmenü">
       {{navigation}}
-      <a class="knopf knopf-voll" href="{{wurzel}}#reservieren">Reservieren</a>
+      <a class="knopf knopf-orange knopf-klein" href="{{wurzel}}#reservieren">Reservieren</a>
     </nav>
   </div>
 </header>
@@ -47,13 +54,16 @@
 {{inhalt}}
 </main>
 <footer class="fuss">
+  <div class="fuss-theke" aria-hidden="true"></div>
   <div class="fuss-innen">
-    <div>
-      <p class="fuss-marke">GENUSSWERK</p>
-      <p>{{strasse}} · {{plz}} {{ort}}</p>
-      <p><a href="tel:{{telefon_link}}">{{telefon_anzeige}}</a> · <a href="mailto:{{email}}">{{email}}</a></p>
+    <div class="fuss-marke">
+      <span class="marke-rahmen"><span>GENUSS</span><span>WERK</span></span>
+      <p>{{strasse}}<br>{{plz}} {{ort}}</p>
     </div>
-    <nav aria-label="Rechtliches" class="fuss-links">
+    <div>
+      <p><a href="tel:{{telefon_link}}">{{telefon_anzeige}}</a><br><a href="mailto:{{email}}">{{email}}</a></p>
+    </div>
+    <nav aria-label="Weitere Links" class="fuss-links">
       <a href="{{instagram}}" rel="noopener">Instagram</a>
       <a href="{{facebook}}" rel="noopener">Facebook</a>
       <a href="{{wurzel}}impressum/">Impressum</a>

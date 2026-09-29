@@ -76,9 +76,9 @@ Analyse der vorhandenen Fotos vom Gastraum:
 
 ### Designsystem (Kurzfassung, Werte in `design-tokens.css`)
 
-- **Farben:** Anthrazit `#1f2124` (Grund), Licht-Weiß `#f4f1ea` (Text), Orange `#d04d15` (Marke, Handlung), Navy `#1e425a` (Info-Flächen), Kupfer `#ab5634` (Logo, Linien), Nussholz `#9a6440`, Ziegel `#7b4a3c`, Petrol-Samt `#3d7d92`, Stahl `#b9bdc1`.
+- **Farben:** Anthrazit `#1f2124` (Grund), LED-Weiß `#e6e9e7` (Text), Orange `#d04d15` (Marke, Handlung), Navy `#1e425a` (Info-Flächen), Kupfer `#ab5634` (Logo, Linien), Nussholz `#9a6440`, Ziegel `#7b4a3c`, Petrol-Samt `#3d7d92`, Stahl `#b9bdc1`.
 - **Kontrast:** Orange auf Anthrazit erreicht ca. 3,7:1, also nur für große Schrift und Flächen. Weiße Schrift auf Buttons braucht das dunklere Orange `#b8420f` (ca. 5:1).
-- **Schriften:** *Barlow Semi Condensed* (Google Fonts, identisch mit der Speisekarte) für Titel in 800/900 VERSAL und für Fließtext. Pinselschrift der Karte ist *Ernest and Emily* (kommerziell). Webfont-Lizenz anfragen, sonst Ersatz *Caveat Brush*.
+- **Schriften:** *Barlow Semi Condensed* (identisch mit der Speisekarte) für Titel in 800/900 VERSAL, *Barlow* für Fließtext, beide selbst gehostet. Pinselschrift der Karte ist *Ernest and Emily* (kommerziell). Webfont-Lizenz anfragen, sonst Ersatz *Caveat Brush*.
 - **Formen:** kantig, Radius 2 px, dünne Stahllinien, keine Schatten-Kacheln.
 - **Fotos:** echte Fotos aus dem Raum, eher dunkel und warm. Schwarz-Weiß-Fotos (Espresso Martini, DJ) für den Event-Bereich.
 - **Themen:** dunkles Standardthema „Abend“. Optional helles Thema „Tag“ für Kaffee am Sonntag.

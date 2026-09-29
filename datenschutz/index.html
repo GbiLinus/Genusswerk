@@ -3,12 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Datenschutz – Genusswerk Bad Rothenfelde</title>
+<title>Datenschutz | Genusswerk Bad Rothenfelde</title>
 <meta name="description" content="Bar &amp; Restaurant in Bad Rothenfelde nahe Kurpark und Gradierwerk: Burger, Flammkuchen, Spritz, Cocktails, Kaffee und DJ-Abende am Wochenende.">
 <meta name="robots" content="noindex, nofollow">
-<meta name="theme-color" content="#1f2124">
+<meta name="theme-color" content="#1a1c1f">
+<meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Datenschutz – Genusswerk Bad Rothenfelde">
+<meta property="og:title" content="Datenschutz | Genusswerk Bad Rothenfelde">
 <meta property="og:description" content="Bar &amp; Restaurant in Bad Rothenfelde nahe Kurpark und Gradierwerk: Burger, Flammkuchen, Spritz, Cocktails, Kaffee und DJ-Abende am Wochenende.">
 <meta property="og:locale" content="de_DE">
 <link rel="canonical" href="https://genusswerk.info/datenschutz/">
@@ -21,48 +22,57 @@
   if (neuGeladen && location.hash) history.replaceState(null, "", location.pathname + location.search);
   window.__gwNachOben = neuGeladen || !location.hash;
   if (window.__gwNachOben) window.scrollTo(0, 0);
+  document.documentElement.classList.add("js");
 })();
 </script>
+<link rel="preload" href="../src/fonts/barlow-semi-condensed-900.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../src/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../src/fonts.css">
 <link rel="stylesheet" href="../src/design-tokens.css">
 <link rel="stylesheet" href="../src/site.css">
 
 </head>
 <body data-seite="datenschutz">
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
-<p class="vorschau">Vorschau · noch nicht freigegeben</p>
-<header class="kopf">
+<header class="kopf" id="kopf">
+  <p class="vorschau">Vorschau, noch nicht freigegeben</p>
   <div class="kopf-innen">
-    <a class="marke" href="../" aria-label="Genusswerk – Startseite">
-      <span class="marke-wort">GENUSS<br>WERK</span>
+    <a class="marke" href="../" aria-label="Genusswerk, zur Startseite">
+      <span class="marke-rahmen"><span>GENUSS</span><span>WERK</span></span>
       <span class="marke-claim">Schlemmen &amp; Verweilen</span>
     </a>
-    <button id="menue-knopf" class="menue-knopf" type="button" aria-expanded="false" aria-controls="menue">Menü</button>
+    <button id="menue-knopf" class="menue-knopf" type="button" aria-expanded="false" aria-controls="menue">
+      <span class="menue-striche" aria-hidden="true"></span><span class="menue-wort">Menü</span>
+    </button>
     <nav id="menue" class="menue" aria-label="Hauptmenü">
-      <a href="../#genuss">Über uns</a>
-      <a href="../karte/">Karte</a>
-      <a href="../#events">Musik &amp; Events</a>
-      <a href="../#eindruecke">Impressionen</a>
-      <a href="../#besuch">Besuch</a>
-      <a class="knopf knopf-voll" href="../#reservieren">Reservieren</a>
+      <a class="menue-link" href="../#genuss">Über uns</a>
+      <a class="menue-link" href="../karte/">Karte</a>
+      <a class="menue-link" href="../#events">Musik</a>
+      <a class="menue-link" href="../#eindruecke">Impressionen</a>
+      <a class="menue-link" href="../#besuch">Besuch</a>
+      <a class="knopf knopf-orange knopf-klein" href="../#reservieren">Reservieren</a>
     </nav>
   </div>
 </header>
 <main id="inhalt">
 
-<section class="abschnitt recht">
+<div class="abschnitt recht">
   <h1>Datenschutz</h1>
-  <p>Die Datenschutzerklärung wird vor dem Livegang vom Betreiber bereitgestellt (siehe FEHLT.md).</p>
-</section>
+  <p>Die Datenschutzerklärung stellt der Betreiber vor dem Livegang bereit.</p>
+</div>
 
 </main>
 <footer class="fuss">
+  <div class="fuss-theke" aria-hidden="true"></div>
   <div class="fuss-innen">
-    <div>
-      <p class="fuss-marke">GENUSSWERK</p>
-      <p>Salinenstraße 2-6 · 49214 Bad Rothenfelde</p>
-      <p><a href="tel:+4954242949746">+49 (0) 5424 – 294 97 46</a> · <a href="mailto:cafe@genusswerk.info">cafe@genusswerk.info</a></p>
+    <div class="fuss-marke">
+      <span class="marke-rahmen"><span>GENUSS</span><span>WERK</span></span>
+      <p>Salinenstraße 2-6<br>49214 Bad Rothenfelde</p>
     </div>
-    <nav aria-label="Rechtliches" class="fuss-links">
+    <div>
+      <p><a href="tel:+4954242949746">+49 (0) 5424 – 294 97 46</a><br><a href="mailto:cafe@genusswerk.info">cafe@genusswerk.info</a></p>
+    </div>
+    <nav aria-label="Weitere Links" class="fuss-links">
       <a href="https://www.instagram.com/genusswerk.br/" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/genusswerk.br/" rel="noopener">Facebook</a>
       <a href="../impressum/">Impressum</a>

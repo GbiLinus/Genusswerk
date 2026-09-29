@@ -29,7 +29,8 @@ Priorität: **P1** = Pflicht vor Livegang · **P2** = wichtig für eine edle Sei
 Vorhanden sind 13 Bilder in Web-Auflösung (Bar, Drinks, Burger, Torte, DJ-Grafik). Für eine edle Seite fehlen:
 
 - [ ] **P1** **Originale in voller Auflösung** der vorhandenen Fotos (nicht die Web-Versionen).
-- [ ] **P1** **Hero-Foto quer** (min. 2400 px breit): Gastraum am Abend, Lichtlinien an, Theke, Petrol-Hocker, Ziegelwand.
+- [ ] **P1** **Hero-Foto quer** (min. 2400 px breit): Gastraum am Abend, Lichtlinien an, Theke, Petrol-Hocker, Ziegelwand. Wird als `bilder/hero.webp` automatisch hinter die gezeichnete Decke gelegt.
+- [ ] **P2** Sechs Fotos für die Impressionen, Dateinamen siehe `daten/inhalte.json › bilder_site.galerie`.
 - [ ] **P2** Außenansicht und Eingang (Wiedererkennung, Anfahrt).
 - [ ] **P2** Außenbereich/Terrasse, falls vorhanden.
 - [ ] **P2** Gastraum als Ganzes (Übersicht, Tische, Plätze).
@@ -75,7 +76,7 @@ Empfehlung: ein halber Tag mit Fotograf am Abend, alles in einem Stil.
   - `/impressum/`, `/datenschutz/`
 - [ ] **P1** Reservierung: Telefon und E-Mail reichen zum Start. Soll ein Tool angebunden werden (OpenTable, Quandoo, resmio, …)? Falls ja: Zugang oder Einbettungs-Code.
 - [ ] **P2** Anfrageformular: Dienst wählen (z. B. Formspree, Web3Forms oder Formular beim deutschen Hoster) und Ziel-Postfach bestätigen.
-- [ ] **P2** Schriften lokal einbinden statt von Google Fonts (Datenschutz). Dateien Barlow Semi Condensed + Pinselschrift.
+- [x] **P2** Schriften lokal einbinden statt von Google Fonts (Datenschutz). Erledigt: Barlow, Barlow Semi Condensed, Caveat Brush in `src/fonts/`.
 - [ ] **P2** **Google-Unternehmensprofil**: Zugang, damit Zeiten, Fotos und Link zur Karte stimmen.
 - [ ] **P2** Instagram und Facebook: Wer pflegt Termine? Sollen Termine aus einer Liste (Datei oder Google-Kalender) automatisch auf die Seite?
 - [ ] **P3** Besucherstatistik ja/nein. Falls ja: ohne Cookies (z. B. Plausible, Matomo ohne Cookies).
@@ -95,6 +96,7 @@ Empfehlung: ein halber Tag mit Fotograf am Abend, alles in einem Stil.
 - Konzept mit Raumanalyse und Designrichtung: `docs/KONZEPT.md`
 - Alle Inhalte aus dem Netz, inkl. kompletter Karte mit Preisen: `daten/inhalte.json`
 - Farben und Schriften: `src/design-tokens.css`
-- Build und Rohbau aller Seiten (Start, Karte mit Filter, Impressum, Datenschutz-Platzhalter): `python3 build.py`
+- Fertig gestaltete Seiten (Start, Karte mit Filter und Sprungleiste, Impressum, Datenschutz-Platzhalter): `python3 build.py`
+- Kleine Animationen: Lichtlinien gehen beim Laden an, Gläser funkeln, Lichtlinien zwischen Abschnitten, Schallplatte dreht sich, Öffnungsstatus pulsiert
 - Scroll-Regel: Neuladen startet immer oben (getestet in Chromium, Desktop und Handy)
 - Öffnungsstatus live („Jetzt geöffnet · bis 22:00 Uhr“), strukturierte Daten für Google (schema.org Restaurant)

@@ -18,6 +18,19 @@
     { "karte": "speisekarte", "name": "Elsässer Art", "titel": "Flammkuchen Elsässer Art" }
   ],
 
+  "bilder_site": {
+    "_hinweis": "Geplante Fotos. Datei nach Freigabe in bilder/ ablegen (WebP, max. 200 KB). Fehlt die Datei, zeigt die Seite einen gestalteten Platzhalter mit dem Motiv.",
+    "hero": { "datei": "bilder/hero.webp", "alt": "Die Theke im Genusswerk am Abend" },
+    "galerie": [
+      { "datei": "bilder/theke.webp", "motiv": "Die Theke am Abend", "alt": "Nussholz-Theke mit petrolfarbenen Barhockern und Gläserregal" },
+      { "datei": "bilder/spritz.webp", "motiv": "Genusswerk Spritz", "alt": "Spritz im Weinglas mit Minze und Beeren" },
+      { "datei": "bilder/burger.webp", "motiv": "Smashed Burger", "alt": "Burger im Zeitungspapier vor der Klinkerwand" },
+      { "datei": "bilder/dj.webp", "motiv": "DJ-Abend", "alt": "DJ am Mischpult im Genusswerk" },
+      { "datei": "bilder/espresso-martini.webp", "motiv": "Espresso Martini", "alt": "Espresso Martini mit Kaffeebohnen" },
+      { "datei": "bilder/torte.webp", "motiv": "Torte mit Schoko-Logo", "alt": "Sahnetorte mit Schokoladenplättchen im Genusswerk-Design" }
+    ]
+  },
+
   "betrieb": {
     "name": "GENUSSWERK",
     "claim": "Schlemmen & Verweilen",
