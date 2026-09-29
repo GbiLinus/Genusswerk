@@ -1,0 +1,420 @@
+{
+  "_hinweis": "Single Source of Truth für die neue Genusswerk-Website. Stand der Recherche: 29.09.2026. Quellen: genusswerk.info (Startseite, Impressum), Speisekarten-PDFs 'GW_Speisekarte_NEW_2026' (Juni 2026), Instagram @genusswerk.br, osnabruecker-land.de. Preise und Zeiten vor Livegang mit dem Betrieb abgleichen.",
+
+  "site": {
+    "vorschau": true,
+    "_vorschau": "true = Seite trägt noindex und Vorschau-Hinweis. Erst nach Freigabe durch den Betrieb auf false setzen.",
+    "url": "https://genusswerk.info",
+    "sprache": "de",
+    "beschreibung": "Bar & Restaurant in Bad Rothenfelde nahe Kurpark und Gradierwerk: Burger, Flammkuchen, Spritz, Cocktails, Kaffee und DJ-Abende am Wochenende."
+  },
+
+  "highlights": [
+    { "karte": "getraenkekarte", "name": "Genusswerk Spritz" },
+    { "karte": "speisekarte", "name": "Smashed Burger" },
+    { "karte": "speisekarte", "name": "Kanada", "titel": "Poutine Kanada" },
+    { "karte": "speisekarte", "name": "Genusswerk Currywurst" },
+    { "karte": "getraenkekarte", "name": "Espresso Martini" },
+    { "karte": "speisekarte", "name": "Elsässer Art", "titel": "Flammkuchen Elsässer Art" }
+  ],
+
+  "betrieb": {
+    "name": "GENUSSWERK",
+    "claim": "Schlemmen & Verweilen",
+    "slogan": "Dein Mittelpunkt in Bad Rothenfelde!",
+    "unterzeile": "Bar, Restaurant, Events und vieles mehr!",
+    "gegruendet": 2021,
+    "vorgaenger": "Café Koch (Kurcafé, Familienbetrieb, jetzt in dritter Generation; nach umfassender Renovierung als Genusswerk neu eröffnet)",
+    "lage": "Nahe Kurpark und Gradierwerk, Bad Rothenfelde"
+  },
+
+  "ueber_uns": {
+    "headline": "Genuss mit allen Sinnen!",
+    "absaetze": [
+      "Mit dem Genusswerk haben wir 2021 einen Ort geschaffen, an dem Genuss und Geselligkeit Hand in Hand gehen. Hier erlebst und begegnest du Bad Rothenfelde.",
+      "Wir laden dich ein, unsere umfangreiche Auswahl an erlesenen Drinks und passenden Speisen zu entdecken und einen unvergesslichen Abend in gemütlicher Atmosphäre zu genießen.",
+      "Egal, ob du mit einer Gruppe von Freunden, einem vertrauten Stammtisch oder einer größeren Gesellschaft zu uns kommst – wir heißen dich willkommen und legen großen Wert darauf, dass du deine Zeit bei uns in vollen Zügen genießen kannst.",
+      "Wir freuen uns darauf, dich im Genusswerk begrüßen zu dürfen – deinem Mittelpunkt in Bad Rothenfelde!"
+    ]
+  },
+
+  "musik_events": {
+    "headline": "Musikgenuss!",
+    "absaetze": [
+      "Auch am Wochenende kommt ihr bei uns voll auf eure Kosten! Freut euch auf unsere regelmäßigen Musikveranstaltungen, bei denen für jeden Geschmack etwas dabei ist. Unterschiedliche DJs sorgen mit einem abwechslungsreichen Musikmix aus Charts, Classic, Schlager und House/Techno für beste Stimmung und einen unvergesslichen Abend mit Freunden oder Familie.",
+      "Außerdem halten wir euch auf unseren Social-Media-Kanälen über aktuelle Getränkespecials – ob exklusive Angebote oder ein Begrüßungsshot – sowie über alle kommenden Events auf dem Laufenden. Bleibt gespannt!"
+    ],
+    "genres": ["Charts", "Classic", "Schlager", "House/Techno"],
+    "termine": []
+  },
+
+  "kontakt": {
+    "firma": "Genusswerk Rothenfelde GmbH",
+    "strasse": "Salinenstraße 2-6",
+    "plz": "49214",
+    "ort": "Bad Rothenfelde",
+    "land": "Deutschland",
+    "telefon_anzeige": "+49 (0) 5424 – 294 97 46",
+    "telefon_link": "+4954242949746",
+    "email": "cafe@genusswerk.info",
+    "web": "https://genusswerk.info",
+    "instagram": "https://www.instagram.com/genusswerk.br/",
+    "facebook": "https://www.facebook.com/genusswerk.br/",
+    "reservierung": "Telefonisch oder per E-Mail"
+  },
+
+  "oeffnungszeiten": {
+    "_quelle": "genusswerk.info (offiziell). Abweichende Angaben auf Drittportalen, siehe KONZEPT.md › Widersprüche.",
+    "tage": [
+      { "tag": "Montag", "kurz": "Mo", "geschlossen": true, "label": "Ruhetag" },
+      { "tag": "Dienstag", "kurz": "Di", "von": "16:00", "bis": "22:00" },
+      { "tag": "Mittwoch", "kurz": "Mi", "von": "16:00", "bis": "22:00" },
+      { "tag": "Donnerstag", "kurz": "Do", "von": "16:00", "bis": "22:00" },
+      { "tag": "Freitag", "kurz": "Fr", "von": "16:00", "bis": "22:00" },
+      { "tag": "Samstag", "kurz": "Sa", "von": "12:00", "bis": "22:00" },
+      { "tag": "Sonntag", "kurz": "So", "von": "11:00", "bis": "21:00" }
+    ]
+  },
+
+  "impressum": {
+    "firma": "Genusswerk Rothenfelde GmbH",
+    "anschrift": "Salinenstraße 2-6, 49214 Bad Rothenfelde, Deutschland",
+    "geschaeftsfuehrer": "Jonas Janböke",
+    "registergericht": "Amtsgericht Osnabrück",
+    "handelsregister": "HRB 216057",
+    "ust_id": "DE344012785",
+    "telefon": "+49 (0) 5424 – 294 97 46",
+    "email": "cafe@genusswerk.info"
+  },
+
+  "speisekarte": {
+    "stand": "Juni 2026",
+    "pdf": "https://genusswerk.info/wp-content/uploads/2026/06/GW_Speisekarte_NEW_2026_Speisen_ONLINE.pdf",
+    "hinweis": "Bei Fragen zu Allergenen und Zusatzstoffen wenden Sie sich bitte an unseren Service.",
+    "kategorien": [
+      {
+        "name": "Starter / Snack",
+        "gerichte": [
+          { "name": "Kräuterbaguette", "beschreibung": "mit Aioli", "preis": "6,00" },
+          { "name": "Knusprige Hähnchenkeulen", "beschreibung": "3 Stück", "preis": "7,50" }
+        ]
+      },
+      {
+        "name": "Salat",
+        "gerichte": [
+          { "name": "Blattsalat", "beschreibung": "Blattsalate, Rohkost & Kern-Mix, Parmesanchip & Baguette. Dressing: Caesar / Essig-Öl / Joghurt", "preise": [ { "label": "klein", "preis": "7,50" }, { "label": "groß", "preis": "14,50" } ], "tags": ["vegetarisch"] }
+        ],
+        "extras": [
+          { "name": "Hähnchenfilet", "preis": "6,00" },
+          { "name": "Falafel", "preis": "6,00" }
+        ]
+      },
+      {
+        "name": "Wraps",
+        "gerichte": [
+          { "name": "Gefüllter Chicken-Wrap", "beschreibung": "mit Salat, Rohkost, Hähnchenbrust & Schafskäse", "preis": "9,50" },
+          { "name": "Gefüllter Thunfisch-Wrap", "beschreibung": "mit Salat, Rohkost, Thunfisch & Schafskäse", "preis": "9,50" },
+          { "name": "Gefüllter Falafel-Wrap", "beschreibung": "mit Salat, Rohkost, Falafel & Schafskäse", "preis": "9,50", "tags": ["vegetarisch"] }
+        ]
+      },
+      {
+        "name": "Burger",
+        "hinweis": "Alle Burger serviert mit Pommes & Mayo oder Ketchup.",
+        "gerichte": [
+          { "name": "Smashed Burger", "beschreibung": "Brioche Bun, 100% Rindfleischpatty, Cheddar, Senf, Ketchup, Zwiebeln", "preis": "11,90" },
+          { "name": "Cheeseburger", "beschreibung": "Sauerteig Bun, 100% Rindfleischpatty, Cheddar, Lollo Rosso, Burgersoße, Zwiebeln, Gewürzgurke, Tomate", "preis": "19,90" },
+          { "name": "Spiegelei Bacon", "beschreibung": "Sauerteig Bun, 100% Rindfleischpatty, Lollo Rosso, Burgersoße, Zwiebeln, Gewürzgurke, Tomate, Spiegelei, Bacon", "preis": "19,90" },
+          { "name": "Chickenburger", "beschreibung": "Sauerteig Bun, Hähnchenfilet, Lollo Rosso, Tomate, Zwiebeln, Gewürzgurke, weiße BBQ-Soße", "preis": "19,90" },
+          { "name": "Green Oat Burger", "beschreibung": "Sauerteig Bun, Green Oat Patty, Lollo Rosso, Tomate, Gewürzgurke, Zwiebeln", "preis": "19,90", "tags": ["vegan"] }
+        ],
+        "extras": [
+          { "name": "Bacon", "preis": "2,00" },
+          { "name": "Spiegelei", "preis": "2,00" },
+          { "name": "Doppeltes Patty", "preis": "6,00" },
+          { "name": "Doppeltes SmashPatty", "preis": "3,00" },
+          { "name": "Doppelt Cheddar", "preis": "1,50" },
+          { "name": "Röstzwiebeln", "preis": "1,50" },
+          { "name": "Glutenfreies Burger Bun", "preis": "1,50" }
+        ]
+      },
+      {
+        "name": "Dips / Soßen",
+        "gerichte": [
+          { "name": "Aioli", "preis": "2,00" },
+          { "name": "BBQ", "preis": "2,00" },
+          { "name": "Vegane Mayo", "preis": "2,00", "tags": ["vegan"] },
+          { "name": "Trüffel-Mayo", "preis": "2,00" },
+          { "name": "Käsesauce", "preis": "2,00" }
+        ]
+      },
+      {
+        "name": "Low & Slow",
+        "gerichte": [
+          { "name": "Genusswerk Currywurst", "beschreibung": "160 g Wurst, hausgemachte Currysoße, Rustica-Fritten", "preis": "13,50" },
+          { "name": "Genusswerk Curry Spezial", "beschreibung": "160 g Wurst, hausgemachte Currysoße, Tzatziki, Zwiebeln, Rustica-Fritten", "preis": "14,50" }
+        ]
+      },
+      {
+        "name": "Pommes Poutine",
+        "hinweis": "Poutine ist ein kanadisches Gericht aus Pommes, Käsebruch und warmer Bratensauce, das seinen Ursprung in Quebec hat. Es wird oft als „Durcheinander“ übersetzt, da die Zutaten übereinander geschichtet werden. Poutine kann mit verschiedensten Toppings verfeinert werden und gilt als kanadisches Nationalgericht.",
+        "gerichte": [
+          { "name": "Kanada", "beschreibung": "Rustica-Fritten, Bratensoße, Mozzarella, Radieschen, Petersilie", "preis": "9,00" },
+          { "name": "Pulled Pork", "beschreibung": "Rustica-Fritten, Pulled Pork, BBQ-Soße, Röstzwiebeln", "preis": "13,00" },
+          { "name": "Gyros", "beschreibung": "Rustica-Fritten, Gyros, Tzatziki, Zwiebeln", "preis": "13,90" }
+        ]
+      },
+      {
+        "name": "Sides",
+        "gerichte": [
+          { "name": "Rustica-Fritten", "preis": "5,00" },
+          { "name": "Knobifritten", "preis": "6,00" },
+          { "name": "Süßkartoffelpommes", "preis": "6,50" }
+        ]
+      },
+      {
+        "name": "Flammkuchen",
+        "gerichte": [
+          { "name": "Elsässer Art", "beschreibung": "Speck, Zwiebeln & Schmand", "preis": "11,00" },
+          { "name": "Tonno", "beschreibung": "Thunfisch, Zwiebeln & Schmand", "preis": "11,00" },
+          { "name": "Veggie Greek-Style", "beschreibung": "Paprika, Zwiebel, Feta & Schmand", "preis": "11,00", "tags": ["vegetarisch"] }
+        ]
+      },
+      {
+        "name": "Snacks",
+        "gerichte": [
+          { "name": "Nussmix", "preis": "3,50" },
+          { "name": "Chips", "preis": "3,00" },
+          { "name": "Tortilla Chips", "beschreibung": "inkl. Dip nach Wahl", "preis": "5,00" }
+        ]
+      },
+      {
+        "name": "Kinderkarte",
+        "hinweis": "Aufpreis für Erwachsene +2,00 €",
+        "gerichte": [
+          { "name": "Nuggets Pommes", "beschreibung": "Hähnchennuggets mit Rustica-Fritten", "preis": "7,50" },
+          { "name": "Kinderburger", "beschreibung": "Brioche Bun, Patty, Ketchup, Pommes, Mayo oder Ketchup", "preis": "8,50" }
+        ]
+      }
+    ]
+  },
+
+  "getraenkekarte": {
+    "stand": "Juni 2026",
+    "pdf": "https://genusswerk.info/wp-content/uploads/2026/06/GW_Speisekarte_NEW_2026_Getraenke_ONLINE.pdf",
+    "kategorien": [
+      {
+        "name": "Aperitif",
+        "gerichte": [
+          { "name": "Genusswerk Spritz", "beschreibung": "Martini Fiero & Fritz-Limo Orange (wahlweise alkoholfrei)", "preis": "7,90", "tags": ["hausmarke", "alkoholfrei möglich"] },
+          { "name": "Wildberry Spritz", "beschreibung": "Martini Bianco, Russian Wild Berry & Waldbeeren", "preis": "7,90" },
+          { "name": "Pomegranate Spritz", "beschreibung": "Martini Bianco & Pomegranate (wahlweise alkoholfrei)", "preis": "7,90", "tags": ["alkoholfrei möglich"] },
+          { "name": "Aperol Spritz", "beschreibung": "Aperol, Soda, Secco & Orange", "preis": "7,90" },
+          { "name": "Genusswerk Yuzu Spritz", "beschreibung": "Martini Bianco, Yuzu, Prosecco & Wasser", "preis": "7,90", "tags": ["hausmarke"] },
+          { "name": "Genusswerk Pink Grapefruit Spritz", "beschreibung": "Martini Bianco, Prosecco & Pink Grapefruit", "preis": "7,90", "tags": ["hausmarke"] }
+        ]
+      },
+      {
+        "name": "Bier vom Fass",
+        "gerichte": [
+          { "name": "Krombacher Pils", "preise": [ { "label": "0,3 l", "preis": "3,50" }, { "label": "0,5 l", "preis": "5,50" } ] },
+          { "name": "Krombacher Dunkel", "preise": [ { "label": "0,3 l", "preis": "3,50" }, { "label": "0,5 l", "preis": "5,50" } ] },
+          { "name": "Krombacher 0,0 %", "preise": [ { "label": "0,3 l", "preis": "3,50" }, { "label": "0,5 l", "preis": "5,50" } ], "tags": ["alkoholfrei"] },
+          { "name": "Starnberger Hell", "preise": [ { "label": "0,3 l", "preis": "3,50" }, { "label": "0,5 l", "preis": "5,50" } ] },
+          { "name": "Erdinger Urweisse", "preise": [ { "label": "0,3 l", "preis": "3,50" }, { "label": "0,5 l", "preis": "5,50" } ] },
+          { "name": "Sion Kölsch", "preise": [ { "label": "0,2 l", "preis": "2,30" }, { "label": "0,4 l", "preis": "4,40" } ] }
+        ]
+      },
+      {
+        "name": "Aus der Flasche",
+        "tags": ["alkoholfrei"],
+        "gerichte": [
+          { "name": "Erdinger Grapefruit alkoholfrei", "beschreibung": "0,3 l", "preis": "3,80", "tags": ["alkoholfrei"] },
+          { "name": "Erdinger Weizen alkoholfrei", "beschreibung": "0,5 l", "preis": "5,50", "tags": ["alkoholfrei"] }
+        ]
+      },
+      {
+        "name": "Wasser",
+        "tags": ["alkoholfrei"],
+        "gerichte": [
+          { "name": "Bad Rothenfelder Tafelwasser", "preise": [ { "label": "0,25 l", "preis": "2,50" }, { "label": "0,75 l", "preis": "6,50" } ], "tags": ["regional"] }
+        ]
+      },
+      {
+        "name": "Vio-Saftschorlen 0,25 l",
+        "tags": ["alkoholfrei"],
+        "gerichte": [
+          { "name": "Apfelschorle", "preis": "3,80" },
+          { "name": "Johannisbeerschorle", "preis": "3,80" },
+          { "name": "Rhabarberschorle", "preis": "3,80" }
+        ]
+      },
+      {
+        "name": "Coca-Cola",
+        "tags": ["alkoholfrei"],
+        "gerichte": [
+          { "name": "Coca-Cola", "preis": "3,90" },
+          { "name": "Coca-Cola Zero", "preis": "3,90" },
+          { "name": "Fanta", "preis": "3,90" },
+          { "name": "Sprite", "preis": "3,90" },
+          { "name": "Mezzo-Mix", "preis": "3,90" }
+        ]
+      },
+      {
+        "name": "Schweppes",
+        "tags": ["alkoholfrei"],
+        "gerichte": [
+          { "name": "Tonic Water", "preis": "3,50" },
+          { "name": "Ginger Ale", "preis": "3,50" },
+          { "name": "Bitter Lemon", "preis": "3,50" },
+          { "name": "Russian Wild Berry", "preis": "3,50" },
+          { "name": "Pomegranate", "preis": "3,50" }
+        ]
+      },
+      {
+        "name": "Red Bull",
+        "tags": ["alkoholfrei"],
+        "gerichte": [
+          { "name": "Red Bull Original", "preis": "4,50" },
+          { "name": "Red Bull Sugarfree", "preis": "4,50" },
+          { "name": "Red Bull Kokos-Blaubeere", "preis": "4,50" }
+        ]
+      },
+      {
+        "name": "Richards Sun Ice Tea 0,33 l",
+        "tags": ["alkoholfrei"],
+        "gerichte": [
+          { "name": "Lemon", "preis": "4,50" },
+          { "name": "Peach", "preis": "4,50" },
+          { "name": "Pomegranate", "preis": "4,50" }
+        ]
+      },
+      {
+        "name": "Feinbrennerei Sasse aus dem Münsterland 2 cl",
+        "gerichte": [
+          { "name": "Williamsbirne", "preis": "4,00" },
+          { "name": "Marille mit Honig", "preis": "4,00" },
+          { "name": "Nuss mit Kakao", "preis": "4,00" },
+          { "name": "Nuss mit Kakao & Limette auf Eis", "preis": "5,00" }
+        ]
+      },
+      {
+        "name": "Klassiker 2 cl",
+        "gerichte": [
+          { "name": "Brücklyn Green", "beschreibung": "Minzlikör", "preis": "3,00" },
+          { "name": "Brücklyn Passion", "beschreibung": "Maracujalikör", "preis": "3,00" },
+          { "name": "Jägermeister", "preis": "3,50" },
+          { "name": "Ramazzotti mit Eis & Zitrone", "preis": "3,50" },
+          { "name": "Baileys auf Eis", "preis": "4,00" }
+        ]
+      },
+      {
+        "name": "Red Bull Drinks",
+        "gerichte": [
+          { "name": "Melt Vodka Red Bull", "beschreibung": "Choose your flavour", "preis": "8,50" },
+          { "name": "Jägermeister Red Bull", "preis": "8,50" },
+          { "name": "Martini Blue Coconut", "beschreibung": "4 cl Martini Bianco, Red Bull White Edition Kokos-Blaubeere & Beeren", "preis": "8,50" }
+        ]
+      },
+      {
+        "name": "Spirituosen 4 cl",
+        "hinweis": "Filler +2,50 € (Rum, Vodka, Whiskey)",
+        "gerichte": [
+          { "name": "Bacardi Carta Blanca", "beschreibung": "Rum · Bahamas, Noten von Mandel, Vanille", "preis": "4,00" },
+          { "name": "Bacardi Añejo 4 yrs", "beschreibung": "Rum · Karibik, Noten von Früchten, Honig, Nelke", "preis": "6,00" },
+          { "name": "Melt Vodka", "beschreibung": "Das ist unser Vodka. Premium Vodka, 40 % Vol.", "preis": "4,00", "tags": ["hausmarke"] },
+          { "name": "Teeling Whiskey", "beschreibung": "Vanille, Trockenfrüchte, Aprikosencharakter", "preis": "5,00" },
+          { "name": "Bombay Sapphire Gin & Tonic", "beschreibung": "serviert mit Zitrone & Schweppes Tonic Water", "preis": "9,50" }
+        ]
+      },
+      {
+        "name": "Cocktails Classic",
+        "gerichte": [
+          { "name": "Passionfruit Martini", "beschreibung": "Vodka, Vanille, Maracujasaft, Maracujalikör & Zitronensaft", "preis": "9,50" },
+          { "name": "Espresso Martini", "beschreibung": "Vodka, Kaffeelikör, Espresso & Vanille", "preis": "9,50" }
+        ]
+      },
+      {
+        "name": "Hausweine",
+        "gerichte": [
+          { "name": "Grauburgunder", "preise": [ { "label": "0,2 l", "preis": "6,30" }, { "label": "1,0 l", "preis": "27,90" } ] },
+          { "name": "Weiß lieblich", "preise": [ { "label": "0,2 l", "preis": "6,30" }, { "label": "1,0 l", "preis": "27,90" } ] },
+          { "name": "Portugieser Weißherbst", "preise": [ { "label": "0,2 l", "preis": "6,30" }, { "label": "1,0 l", "preis": "27,90" } ] },
+          { "name": "Lemberger", "preise": [ { "label": "0,2 l", "preis": "6,30" }, { "label": "1,0 l", "preis": "27,90" } ] }
+        ]
+      },
+      {
+        "name": "Weißwein",
+        "gerichte": [
+          { "name": "Sauvignon Blanc", "beschreibung": "trocken, Weingut Russbach, Rheinhessen", "preise": [ { "label": "0,2 l", "preis": "7,50" }, { "label": "0,7 l", "preis": "26,00" } ] },
+          { "name": "Scheurebe", "beschreibung": "feinherb, Weingut Lergenmüller, Pfalz", "preise": [ { "label": "0,2 l", "preis": "7,50" }, { "label": "0,7 l", "preis": "26,00" } ] }
+        ]
+      },
+      {
+        "name": "Rotwein",
+        "gerichte": [
+          { "name": "Rioja", "beschreibung": "trocken, Familia Valdelana, Cosecha", "preise": [ { "label": "0,2 l", "preis": "6,90" }, { "label": "0,7 l", "preis": "25,50" } ] }
+        ]
+      },
+      {
+        "name": "Kaffee",
+        "tags": ["alkoholfrei"],
+        "hinweis": "Von Ferdinands Kaffeerösterei",
+        "gerichte": [
+          { "name": "Café Crema", "preis": "2,90" },
+          { "name": "Kännchen Kaffee", "preis": "4,80" },
+          { "name": "Espresso", "preis": "2,90" },
+          { "name": "Doppelter Espresso", "preis": "4,40" },
+          { "name": "Espresso Macchiato", "preis": "3,10" },
+          { "name": "Cappuccino", "preis": "3,40" },
+          { "name": "Milchkaffee", "preis": "3,40" },
+          { "name": "Flat White", "preis": "4,10" },
+          { "name": "Latte Macchiato", "preis": "4,10" },
+          { "name": "Heiße Schokolade", "preis": "4,10" },
+          { "name": "Schokoccino", "preis": "4,40" },
+          { "name": "Eiskaffee", "preis": "8,50" },
+          { "name": "Eisschokolade", "preis": "8,50" }
+        ]
+      },
+      {
+        "name": "Tee",
+        "tags": ["alkoholfrei"],
+        "hinweis": "Serviert im Kännchen mit hausgebackenem Gebäck",
+        "gerichte": [
+          { "name": "Schwarz", "beschreibung": "Darjeeling, Earl Grey", "preis": "4,80" },
+          { "name": "Grün", "beschreibung": "Green Dragon, Morgentau", "preis": "4,80" },
+          { "name": "Kräuter", "beschreibung": "Bergkräuter, Fruity Camomile, Refreshing Mint", "preis": "4,80" },
+          { "name": "Frucht", "beschreibung": "Rooibos Cream Orange, Lemon Fresh, Sweet Berries", "preis": "4,80" }
+        ]
+      }
+    ]
+  },
+
+  "partner": {
+    "sponsor": { "name": "JOPA", "web": "https://www.jopa.de", "hinweis": "Laut Karte 'Friendly sponsored by'" },
+    "lieferanten": ["Ferdinands Kaffeerösterei", "Feinbrennerei Sasse (Münsterland)", "Bad Rothenfelder Tafelwasser", "Weingut Russbach (Rheinhessen)", "Weingut Lergenmüller (Pfalz)"],
+    "werbeplatz": "Hier soll Ihr Unternehmen stehen? Kontaktiert uns gern!"
+  },
+
+  "bilder_bestand": {
+    "_hinweis": "Vorhandene Fotos auf genusswerk.info. Nutzung nur mit Freigabe des Betriebs; Originaldateien in hoher Auflösung beim Betrieb anfragen.",
+    "raum": [
+      "https://genusswerk.info/wp-content/uploads/2024/05/385A5D4A-F334-4009-AD94-37AFCB60D4E1.jpeg",
+      "https://genusswerk.info/wp-content/uploads/2024/06/genusswerk_impression4_new.jpg"
+    ],
+    "drinks": [
+      "https://genusswerk.info/wp-content/uploads/2024/05/16C83994-0C60-40D1-82FC-FA08CF682CFC-scaled.jpeg",
+      "https://genusswerk.info/wp-content/uploads/2024/06/genusswerk_impression1_new.jpg",
+      "https://genusswerk.info/wp-content/uploads/2024/06/genusswerk_impression5_new.jpg",
+      "https://genusswerk.info/wp-content/uploads/2024/06/genusswerk_impression6_new.jpg",
+      "https://genusswerk.info/wp-content/uploads/2024/05/Getraenke_V04-scaled.jpg"
+    ],
+    "speisen": [
+      "https://genusswerk.info/wp-content/uploads/2024/06/genusswerk_impression3_new.jpg",
+      "https://genusswerk.info/wp-content/uploads/2024/05/Speisen_V04-scaled.jpg",
+      "https://genusswerk.info/wp-content/uploads/2024/06/genusswerk_impression2_new.jpg"
+    ],
+    "events": [
+      "https://genusswerk.info/wp-content/uploads/2025/02/IMG_7869.jpeg"
+    ]
+  }
+}

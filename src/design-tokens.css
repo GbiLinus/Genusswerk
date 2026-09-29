@@ -1,0 +1,73 @@
+/*
+ * Genusswerk – Design-Tokens (Entwurf, Stand 29.09.2026)
+ *
+ * Herkunft der Werte:
+ *   Markenfarben  -> genusswerk.info (CSS) und Speisekarten-PDF 2026
+ *   Raumfarben    -> Fotos vom Gastraum (Ziegel, Nussholz-Theke, Petrol-Samt, Stahlrohre, LED-Linien)
+ *   Schriften     -> Speisekarte 2026: Barlow Semi Condensed + Pinselschrift "Ernest and Emily"
+ *
+ * Raumfarben sind Schätzwerte aus Fotos. Vor dem Bau einmal vor Ort mit Farbkarte abgleichen.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;600;700;800;900&family=Caveat+Brush&display=swap");
+
+:root {
+  /* Marke */
+  --gw-orange: #d04d15;        /* Hauptakzent: Buttons, Schrift-Highlights, Etiketten "Speisen"/"Getränke" */
+  --gw-orange-hover: #b8420f;
+  --gw-kupfer: #ab5634;        /* Logo-Rahmen, feine Linien, Icons */
+  --gw-navy: #1e425a;          /* Textflächen wie "Musikgenuss!" und "Dein Mittelpunkt" */
+  --gw-navy-tief: #142c3d;
+
+  /* Raum */
+  --raum-anthrazit: #1f2124;   /* schwarze Decke, Regale, Stühle: Grundfläche der Seite */
+  --raum-graphit: #2e3135;     /* Thekenfront, Karten-Hintergründe */
+  --raum-ziegel: #7b4a3c;      /* Klinkerwand: nur als Textur oder schmale Flächen */
+  --raum-ziegel-hell: #a06a58;
+  --raum-nuss: #9a6440;        /* Nussholz-Thekenplatte: Trennbänder, Tabellenkopf */
+  --raum-nuss-hell: #c08a5e;
+  --raum-samt: #3d7d92;        /* Petrol-Samt der Barhocker: sekundärer Akzent, Tags, Fokus-Ring */
+  --raum-samt-hell: #6fa9bb;
+  --raum-stahl: #b9bdc1;       /* Lüftungsrohre: Linien, Trenner, sekundärer Text auf dunkel */
+  --raum-licht: #f4f1ea;       /* warmes LED-Weiß: Fließtext auf dunkel */
+
+  /* Semantik – dunkles Standardthema ("Abend in der Bar") */
+  --bg: var(--raum-anthrazit);
+  --bg-karte: var(--raum-graphit);
+  --text: var(--raum-licht);
+  --text-leise: var(--raum-stahl);
+  --akzent: var(--gw-orange);
+  --akzent-2: var(--raum-samt);
+  --linie: rgba(185, 189, 193, 0.18);
+  --fokus: var(--raum-samt-hell);
+
+  /* Schrift */
+  --font-text: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif;
+  --font-titel: "Barlow Semi Condensed", "Arial Narrow", system-ui, sans-serif; /* 800/900, VERSALIEN */
+  --font-hand: "Caveat Brush", "Segoe Script", cursive; /* Ersatz für "Ernest and Emily", Lizenz prüfen */
+
+  --fs-hand: clamp(2.6rem, 6vw, 5rem);
+  --fs-h1: clamp(2.2rem, 5vw, 4rem);
+  --fs-h2: clamp(1.6rem, 3.2vw, 2.4rem);
+  --fs-text: 1.125rem;
+  --fs-klein: 0.95rem;
+
+  /* Raster */
+  --radius: 2px;               /* kantig wie Stahl und Theke, keine runden "App"-Ecken */
+  --gutter: 16px;
+  --max: 1180px;
+  --lichtlinie: linear-gradient(90deg, transparent, var(--raum-licht) 20%, var(--raum-licht) 80%, transparent);
+}
+
+/* Helles Tagesthema ("Kaffee am Sonntag"), optional */
+:root[data-theme="tag"] {
+  --bg: var(--raum-licht);
+  --bg-karte: #ffffff;
+  --text: var(--raum-anthrazit);
+  --text-leise: #5a5f64;
+  --linie: rgba(31, 33, 36, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --animation: none; }
+}

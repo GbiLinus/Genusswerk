@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{titel}}</title>
+<meta name="description" content="{{beschreibung}}">
+{{robots}}
+<meta name="theme-color" content="#1f2124">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{titel}}">
+<meta property="og:description" content="{{beschreibung}}">
+<meta property="og:locale" content="de_DE">
+<link rel="canonical" href="{{canonical}}">
+<script>
+/* Vorgabe: Neuladen startet immer oben. Läuft vor dem Rendern, siehe src/site.js. */
+(function () {
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  var nav = performance.getEntriesByType ? performance.getEntriesByType("navigation")[0] : null;
+  var neuGeladen = nav ? nav.type === "reload" : !!(performance.navigation && performance.navigation.type === 1);
+  if (neuGeladen && location.hash) history.replaceState(null, "", location.pathname + location.search);
+  window.__gwNachOben = neuGeladen || !location.hash;
+  if (window.__gwNachOben) window.scrollTo(0, 0);
+})();
+</script>
+<link rel="stylesheet" href="{{wurzel}}src/design-tokens.css">
+<link rel="stylesheet" href="{{wurzel}}src/site.css">
+{{jsonld}}
+</head>
+<body data-seite="{{seite}}">
+<a class="skip" href="#inhalt">Zum Inhalt springen</a>
+{{vorschau_hinweis}}
+<header class="kopf">
+  <div class="kopf-innen">
+    <a class="marke" href="{{wurzel}}" aria-label="Genusswerk – Startseite">
+      <span class="marke-wort">GENUSS<br>WERK</span>
+      <span class="marke-claim">Schlemmen &amp; Verweilen</span>
+    </a>
+    <button id="menue-knopf" class="menue-knopf" type="button" aria-expanded="false" aria-controls="menue">Menü</button>
+    <nav id="menue" class="menue" aria-label="Hauptmenü">
+      {{navigation}}
+      <a class="knopf knopf-voll" href="{{wurzel}}#reservieren">Reservieren</a>
+    </nav>
+  </div>
+</header>
+<main id="inhalt">
+{{inhalt}}
+</main>
+<footer class="fuss">
+  <div class="fuss-innen">
+    <div>
+      <p class="fuss-marke">GENUSSWERK</p>
+      <p>{{strasse}} · {{plz}} {{ort}}</p>
+      <p><a href="tel:{{telefon_link}}">{{telefon_anzeige}}</a> · <a href="mailto:{{email}}">{{email}}</a></p>
+    </div>
+    <nav aria-label="Rechtliches" class="fuss-links">
+      <a href="{{instagram}}" rel="noopener">Instagram</a>
+      <a href="{{facebook}}" rel="noopener">Facebook</a>
+      <a href="{{wurzel}}impressum/">Impressum</a>
+      <a href="{{wurzel}}datenschutz/">Datenschutz</a>
+    </nav>
+  </div>
+</footer>
+<script type="application/json" id="gw-zeiten">{{zeiten_json}}</script>
+<script src="{{wurzel}}src/site.js" defer></script>
+</body>
+</html>

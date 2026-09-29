@@ -1,0 +1,169 @@
+/*
+ * Genusswerk – Rohbau-Stylesheet.
+ * Struktur und Lesbarkeit stehen, die edle Gestaltung folgt im Designschritt.
+ * Werte kommen aus design-tokens.css.
+ *
+ * Kein `scroll-behavior: smooth` auf html: das würde den Sprung nach oben
+ * beim Neuladen animieren. Weiches Scrollen macht site.js nur bei Klicks.
+ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: var(--fs-text);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-underline-offset: 3px; }
+a:hover { color: var(--akzent); }
+:focus-visible { outline: 2px solid var(--fokus); outline-offset: 3px; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-titel);
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.6em;
+}
+h1 { font-size: var(--fs-h1); font-weight: 900; }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: 1.25rem; }
+h4 { font-size: 1.05rem; margin: 0; }
+
+.hand {
+  font-family: var(--font-hand);
+  font-size: var(--fs-hand);
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--akzent);
+  line-height: 1;
+}
+
+.skip { position: absolute; left: -999px; top: 0; }
+.skip:focus { left: var(--gutter); z-index: 100; background: var(--bg); padding: 8px 12px; }
+
+.vorschau {
+  margin: 0;
+  padding: 6px var(--gutter);
+  background: var(--gw-navy);
+  color: var(--raum-licht);
+  font-size: var(--fs-klein);
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Kopf */
+.kopf { position: sticky; top: 0; z-index: 50; background: rgba(31, 33, 36, 0.92); backdrop-filter: blur(8px); border-bottom: 1px solid var(--linie); }
+.kopf-innen { max-width: var(--max); margin: 0 auto; padding: 10px var(--gutter); display: flex; align-items: center; gap: 16px; }
+.marke { text-decoration: none; display: flex; align-items: center; gap: 12px; border: 1px solid var(--gw-kupfer); padding: 4px 10px; }
+.marke-wort { color: var(--gw-kupfer); font-weight: 800; line-height: 0.95; letter-spacing: 0.04em; }
+.marke-claim { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-leise); }
+.menue { margin-left: auto; display: flex; align-items: center; gap: 20px; }
+.menue a { text-decoration: none; text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.95rem; }
+.menue-knopf { display: none; margin-left: auto; background: none; color: var(--text); border: 1px solid var(--linie); padding: 6px 12px; font: inherit; }
+
+@media (max-width: 860px) {
+  .menue-knopf { display: block; }
+  .menue { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--bg); border-bottom: 1px solid var(--linie); }
+  .menue[data-offen] { display: flex; }
+  .menue a { padding: 14px var(--gutter); border-top: 1px solid var(--linie); }
+  .marke-claim { display: none; }
+}
+
+/* Knöpfe */
+.knoepfe { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.knopf { display: inline-block; padding: 12px 22px; border: 1px solid var(--raum-stahl); border-radius: var(--radius); text-decoration: none; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 600; }
+.knopf-voll { background: var(--gw-orange-hover); border-color: var(--gw-orange-hover); color: #fff; }
+.knopf-voll:hover { background: var(--gw-orange); color: #fff; }
+
+/* Hero */
+.hero { position: relative; min-height: 78vh; display: flex; align-items: center; background: linear-gradient(180deg, var(--raum-graphit), var(--bg)); overflow: hidden; }
+.hero-innen { max-width: var(--max); margin: 0 auto; padding: 80px var(--gutter); width: 100%; }
+.hero-unterzeile { font-size: 1.3rem; color: var(--text-leise); }
+.lichtlinie { position: absolute; left: -10%; right: -10%; bottom: 18%; height: 2px; background: var(--lichtlinie); transform: rotate(-8deg); opacity: 0.6; }
+
+.status { display: inline-block; margin: 8px 0 0; padding: 4px 12px; border: 1px solid var(--linie); font-size: var(--fs-klein); letter-spacing: 0.04em; }
+.status[data-status="offen"] { border-color: var(--raum-samt); color: var(--raum-samt-hell); }
+.status:empty { display: none; }
+
+/* Abschnitte */
+.abschnitt { max-width: var(--max); margin: 0 auto; padding: 72px var(--gutter); }
+.abschnitt-navy { max-width: none; background: var(--gw-navy); padding-left: max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter))); padding-right: max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter))); }
+.abschnitt-theke { border-top: 6px solid var(--raum-nuss); }
+.abschnitt p { max-width: 68ch; }
+.geschichte { margin-top: 32px; padding: 20px; border-left: 3px solid var(--gw-kupfer); background: var(--bg-karte); }
+.leise { color: var(--text-leise); font-size: var(--fs-klein); }
+
+.highlights { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.highlights li { background: var(--bg-karte); padding: 20px; border-top: 2px solid var(--akzent); }
+.highlights p { font-size: var(--fs-klein); color: var(--text-leise); }
+
+.genres { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.genres li { border: 1px solid rgba(255, 255, 255, 0.3); padding: 4px 12px; text-transform: uppercase; font-size: var(--fs-klein); letter-spacing: 0.06em; }
+
+.galerie[data-platzhalter] { border: 1px dashed var(--linie); padding: 48px; text-align: center; color: var(--text-leise); }
+
+.besuch-raster { display: grid; gap: 32px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+address { font-style: normal; }
+.zeiten { border-collapse: collapse; width: 100%; max-width: 420px; }
+.zeiten th, .zeiten td { text-align: left; padding: 8px 0; border-bottom: 1px solid var(--linie); font-weight: 400; }
+.zeiten td { text-align: right; }
+.zeiten tr[data-heute] { color: var(--akzent); font-weight: 600; }
+.partner { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--linie); }
+
+/* Karte */
+.karte-leiste { position: sticky; top: 58px; z-index: 10; background: var(--bg); padding: 12px 0; border-bottom: 1px solid var(--linie); }
+.filter { display: flex; gap: 8px; flex-wrap: wrap; }
+.filter button { background: none; color: var(--text); border: 1px solid var(--linie); padding: 6px 14px; font: inherit; font-size: var(--fs-klein); cursor: pointer; }
+.filter button[aria-pressed="true"] { border-color: var(--raum-samt); background: var(--raum-samt); color: #fff; }
+.sprung { display: flex; gap: 16px; overflow-x: auto; margin-top: 10px; font-size: var(--fs-klein); white-space: nowrap; scrollbar-width: thin; }
+.sprung a { text-decoration: none; color: var(--text-leise); }
+.karte-block { margin-top: 56px; }
+.etikett { display: inline-block; background: var(--gw-orange-hover); color: #fff; padding: 6px 18px; font-family: var(--font-hand); text-transform: none; font-weight: 400; font-size: 2.4rem; letter-spacing: 0; }
+.kategorie { margin-top: 40px; scroll-margin-top: 150px; }
+.kategorie h3 { color: var(--raum-nuss-hell); border-bottom: 1px solid var(--linie); padding-bottom: 8px; }
+.kategorie-hinweis { color: var(--text-leise); font-size: var(--fs-klein); }
+.gerichte { list-style: none; padding: 0; margin: 0; }
+.gericht { padding: 12px 0; }
+.gericht-kopf { display: flex; align-items: baseline; gap: 8px; }
+.gericht-kopf h4 { min-width: 0; text-transform: none; font-weight: 600; font-size: 1.1rem; letter-spacing: 0; }
+.punkte { flex: 1; border-bottom: 1px dotted var(--linie); transform: translateY(-4px); }
+.preis { white-space: nowrap; font-weight: 600; text-align: right; }
+.preis:has(.preis-paar) { white-space: normal; display: flex; flex-wrap: wrap; justify-content: flex-end; column-gap: 12px; }
+.preis-paar { white-space: nowrap; }
+.preis-label { color: var(--text-leise); font-weight: 400; font-size: var(--fs-klein); }
+.gericht-text { margin: 2px 0 0; color: var(--text-leise); font-size: var(--fs-klein); }
+.tag { display: inline-block; margin: 6px 6px 0 0; padding: 1px 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; border: 1px solid var(--raum-samt); color: var(--raum-samt-hell); }
+.extras { font-size: var(--fs-klein); color: var(--text-leise); }
+.karte-pdf { margin-top: 24px; font-size: var(--fs-klein); }
+
+.recht h2 { font-size: 1.2rem; margin-top: 2em; }
+
+/* Fuß */
+.fuss { border-top: 1px solid var(--linie); background: #17191b; }
+.fuss-innen { max-width: var(--max); margin: 0 auto; padding: 40px var(--gutter); display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; font-size: var(--fs-klein); color: var(--text-leise); }
+.fuss-innen p { margin: 0 0 4px; }
+.fuss-marke { color: var(--gw-kupfer); font-weight: 800; letter-spacing: 0.08em; }
+.fuss-links { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-start; }
+
+@media print {
+  .kopf, .fuss, .karte-leiste, .vorschau, .karte-pdf { display: none; }
+  body { background: #fff; color: #000; }
+  .gericht-text, .kategorie-hinweis, .preis-label { color: #333; }
+  .etikett { background: none; color: #000; padding: 0; }
+  .kategorie { break-inside: avoid; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
